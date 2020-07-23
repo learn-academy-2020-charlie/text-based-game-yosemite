@@ -1,22 +1,97 @@
-#               ***************TITLE & BACK STORY***************
-# You are a type A germaphobe 3 weeks into the covid pandemic
-# Normal tuesday morning you wake up get breakfast you start getting ready for your normal virtual work day
-# As yiou look into the mirror you realize you are not camera ready
-# You take a look at the clock and you realize you have 1 hour before work starts
-# Because of your personality you need to get a haircut...NOW!!
-# You think to yourself, "If I hurry I can get a haircut and make it back in time".....as long as nothing happens
-# In a ruch you quickly grab your hat and keys and your homeade banana bread and rush out the door
+# create the main function that starts the story
+def main
+   
+    # ***************TITLE & BACK STORY***************
+    # displays the title and back story
+    storyline =  'WELCOME TO YOUR COVID-19 ADVENTURE
+    You are a type A germaphobe 3 weeks into the covid pandemic
+    It\'s a normal tuesday morning you wake up get breakfast you start getting ready for your normal virtual work day
+    As you look into the mirror you realize you are not camera ready
+    You take a look at the clock and you realize you have 1 hour before work starts
+    Because of your personality you need to get a haircut...NOW!!
+    You think to yourself, "If I hurry I can get a haircut and make it back in time".....as long as nothing happens
+    In a rush you quickly grab your hat and keys and your homeade banana bread and rush out the door.'
+
+    puts storyline
+    # storyline.each_char do |value|
+    #     putc value
+    #     sleep 0.05
+    # end
+
+    # call the function that displays the first obstacle
+    first_obstacle
+end
+
+# Define the first options function  
 
 
-#****************FIRST OPTION***************
 
-# Your favorite barbor is only a few blocks away. How do you want to get there?
-# a. Drive your car - "your battery is dead since you havent driven in 3 weeks"...TRY AGAIN
-# b. Public transportation - "Someone sneezes on you and you go home to shower"...TRY AGAIN
-# c. Walk - "you promptly start walking down the sidewalk thinking to yourself..this wont take very long"
+def first_obstacle
+    
+    puts 'Your favorite barber is only a few blocks away. How do you want to get there? \n'
+    
+    #****************FIRST Obstacle OPTIONS***************
+    puts '
+    a. Drive your car
+    b. Public transportation 
+    c. Walk
+
+    Enter your choice, a, b, or c:'
+    
+    # get the users's choice
+    user_choice = gets.chomp.downcase
+      
+    
+    if user_choice == 'a'
+        puts 'Your battery is dead since you havent driven in 3 weeks...TRY AGAIN!'
+        first_obstacle_options
+    elsif user_choice == 'b'
+        puts 'Someone sneezes on you and you go home to shower...TRY AGAIN!'
+        first_obstacle_options
+    elsif user_choice == 'c'
+        puts 'You promptly start walking down the sidewalk thinking to yourself..this wont take very long'
+        second_obstacle
+    else
+        puts 'Not a valid input try again'
+        first_obstacle_options
+    end
+end
+
+def first_obstacle_options
+        
+    #****************FIRST Obstacle OPTIONS***************
+    puts 'a. Drive your car
+    b. Public transportation 
+    c. Walk
+
+    Enter your choice, a, b, or c:'
+    
+    # get the users's choice
+    user_choice = gets.chomp.downcase
+      
+    
+    if user_choice == 'a'
+        puts 'our battery is dead since you havent driven in 3 weeks...TRY AGAIN!'
+        first_obstacle_options
+    elsif user_choice == 'b'
+        puts 'Someone sneezes on you and you go home to shower...TRY AGAIN!'
+        first_obstacle_options
+    elsif user_choice == 'c'
+        puts 'You promptly start walking down the sidewalk thinking to yourself..this wont take very long'
+        second_obstacle
+    else
+        puts 'Not a valid input try again'
+        first_obstacle_options
+    end
+end
+
+def second_obstacle
+end
 
 
-#******************FRIST OBSTACLE*****************
+        
+
+#******************Second OBSTACLE*****************
 
 # 5 mins into your walk you stumble across a crowd of people waiting in line outside the store.  How do you get through the crowd?
 
@@ -26,7 +101,7 @@
 
 
 
-#******************2nd OBSTACLE*******************
+#******************Thrid OBSTACLE*******************
 
 # Suddenly a tiger appears. You figure that the tiger escaped from the SD zoo because of budget cuts. The tiger is approaching but hasnt spotted you yet, what do you do?
 
@@ -42,3 +117,9 @@
 # a. pretend you didnt see it and walk in anyways - you are arrested and you go to jail.."NO HAIRCUT FOR YOU!"
 # b. defeated yoU go home - you tell your roomate about your adventure you jsut had and they inform you that they picked up a new shelter inplace hobby of cutting hair. they tell you, you could have just asked them for a haircut. exasperated but relieved you get your haircut and make it to work in time YOU WIN!!
 # c. call your newly befriended tiger to intimidate the owner to give you a haircut - your barbor calls the cops and animal control your tiger friend is tranquilized and you are tazed. you go to jail and do not get your haircut YOU LOSE!!
+
+
+
+
+# call the main function
+main
