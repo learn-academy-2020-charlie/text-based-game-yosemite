@@ -4,20 +4,23 @@ def main
     # ***************TITLE & BACK STORY***************
     # displays the title and back story
     storyline =  'WELCOME TO YOUR COVID-19 ADVENTURE
-    You are a type A germaphobe 3 weeks into the covid pandemic
+    You are a type A germaphobe 3 weeks into the COVID pandemic
     It\'s a normal tuesday morning you wake up get breakfast you start getting ready for your normal virtual work day
     As you look into the mirror you realize you are not camera ready
     You take a look at the clock and you realize you have 1 hour before work starts
     Because of your personality you need to get a haircut...NOW!!
     You think to yourself, "If I hurry I can get a haircut and make it back in time".....as long as nothing happens
     In a rush you quickly grab your hat and keys and your homeade banana bread and rush out the door.
-    '
+    Hit enter to continue.'
 
-    puts storyline
-    # storyline.each_char do |value|
-    #     putc value
-    #     sleep 0.05
-    # end
+    # puts storyline
+    storyline.each_char do |value|
+        putc value
+        sleep 0.01
+    end
+
+    gets
+    puts `clear`
 
     # call the function that displays the first obstacle
     first_obstacle
@@ -69,10 +72,18 @@ def first_obstacle
 
 
         if user_choice == 'a'
-            puts 'Your battery is dead since you havent driven in 3 weeks...TRY AGAIN!'
+            puts render_ascii_art './car.txt'
+            puts 'Your battery is dead since you havent driven in 3 weeks...TRY AGAIN!
+            Hit enter to continue.'
+            gets
+            puts `clear`
             first_obstacle_options
         elsif user_choice == 'b'
-            puts 'Someone sneezes on you and you go home to shower...TRY AGAIN!'
+            puts render_ascii_art './bus.txt'
+            puts 'Someone sneezes on you and you go home to shower...TRY AGAIN!
+            Hit enter to continue.'
+            gets
+            puts `clear`
             first_obstacle_options
         elsif user_choice == 'c'
             puts "You promptly start walking down the sidewalk thinking to yourself, \"This won't take very long!\""
@@ -132,7 +143,7 @@ end
 def third_obstacle
     puts 'Suddenly a tiger appears. You figure that the tiger escaped from the SD zoo because of budget cuts. The tiger is approaching but hasnt spotted you yet, what do you do?'
 
-    
+
 
     def third_obstacle_options
         #****************THIRD Obstacle OPTIONS***************
@@ -174,7 +185,7 @@ end
 #*****************FINAL OBSTACLE*******************
 
 def final_obstacle
-    puts 'You finally make it to the barbor shop and you see the notice on the door NO MASK NO ENTRY....what do you do?'
+    puts 'You finally make it to the barber shop and you see the notice on the door NO MASK NO ENTRY....what do you do?'
 
     def final_obstacle_options
         #****************THIRD Obstacle OPTIONS***************
@@ -192,11 +203,13 @@ def final_obstacle
 
         if user_choice == 'a'
             puts render_ascii_art './jail.txt'
+            puts 'You are arrested and you go to jail...“NO HAIRCUT FOR YOU!“...TRY AGAIN!!
+            Hit enter to continue.'
             gets
             puts `clear`
             final_obstacle_options
         elsif user_choice == 'b'
-            
+
             puts 'You arrive at home and tell your roommate about your adventure you just had. They tell you that they picked up a new shelter-in-place hobby of cutting hair. "You could have just asked me for a haircut! :)" they said. Exasperated, but relieved, you get your haircut and make it to work in time.'
             puts render_ascii_art './win.txt'
             restart
