@@ -23,8 +23,8 @@ def main
     first_obstacle
 end
 
-def render_ascii_art
-    File.readlines("./tiger.txt") do |line|
+def render_ascii_art filename
+    File.readlines(filename) do |line|
     puts line
   end
 end
@@ -34,6 +34,7 @@ def restart
     puts 'Would you like to quit (q) or restart (r) ?'
 
     user_choice = gets.chomp.downcase
+    puts `clear`
 
     if user_choice == 'q'
         puts 'THANKS FOR PLAYING!!'
@@ -54,6 +55,7 @@ def first_obstacle
     puts 'Your favorite barber is only a few blocks away. How do you want to get there?'
     def first_obstacle_options
         #****************FIRST Obstacle OPTIONS***************
+        puts render_ascii_art './bike.txt'
         puts '
         a. Drive your car
         b. Public transportation
@@ -63,6 +65,7 @@ def first_obstacle
 
         # get the users's choice
         user_choice = gets.chomp.downcase
+        puts `clear`
 
 
         if user_choice == 'a'
@@ -72,7 +75,7 @@ def first_obstacle
             puts 'Someone sneezes on you and you go home to shower...TRY AGAIN!'
             first_obstacle_options
         elsif user_choice == 'c'
-            puts 'You promptly start walking down the sidewalk thinking to yourself..this wont take very long'
+            puts "You promptly start walking down the sidewalk thinking to yourself, \"This won't take very long!\""
             second_obstacle
         else
             puts 'Not a valid input try again'
@@ -89,6 +92,7 @@ def second_obstacle
 
     def second_obstacle_options
         #****************SECOND Obstacle OPTIONS***************
+        puts render_ascii_art './crowd.txt'
         puts '
         a. You politely ask the crowd of people to move
         b. You offer your homemade banana bread
@@ -98,16 +102,23 @@ def second_obstacle
 
         # get the users's choice
         user_choice = gets.chomp.downcase
+        puts `clear`
 
 
         if user_choice == 'a'
-            puts 'You get a haymaker to the face, you go home to disinfect to clean your bloody nose...TRY AGAIN!'
+            puts render_ascii_art './punch.txt'
+            puts 'You get a haymaker to the face, you go home to disinfect to clean your bloody nose...TRY AGAIN! Hit enter key to continue...'
+            gets
+            puts `clear`
             second_obstacle_options
         elsif user_choice == 'b'
-            puts 'The crowd successfully parts and you continue your journey'
+            puts 'The crowd successfully parts and you continue your journey.'
             third_obstacle
         elsif user_choice == 'c'
-            puts 'They say TP and you quickly realize you need TP so you stand in line to buy TP - you go home...TRY AGAIN!'
+            puts render_ascii_art './tp.txt'
+            puts 'They say TP and you quickly realize you need TP so you stand in line to buy TP - you go home...TRY AGAIN! Hit enter key to continue..'
+            gets
+            puts `clear`
             second_obstacle_options
         else
             puts 'Not a valid input try again'
@@ -116,15 +127,16 @@ def second_obstacle
     end
     second_obstacle_options
 end
-#******************Thrid OBSTACLE*******************
+#******************Third OBSTACLE*******************
 
 def third_obstacle
     puts 'Suddenly a tiger appears. You figure that the tiger escaped from the SD zoo because of budget cuts. The tiger is approaching but hasnt spotted you yet, what do you do?'
 
-    puts render_ascii_art
+    
 
     def third_obstacle_options
         #****************THIRD Obstacle OPTIONS***************
+        puts render_ascii_art './tiger.txt'
         puts '
         a. You run away out of fear
         b. You pick up the nearest stick and try and fight it off
@@ -134,12 +146,19 @@ def third_obstacle
 
         # get the users's choice
         user_choice = gets.chomp.downcase
+        puts `clear`
 
         if user_choice == 'a'
-            puts 'You go home and never get your hair cut...TRY AGAIN!'
+            puts render_ascii_art './run.txt'
+            puts 'You go home and never get your hair cut...TRY AGAIN! Hit enter key to continue...'
+            gets
+            puts `clear`
             third_obstacle_options
         elsif user_choice == 'b'
-            puts 'Even though you thought you were tough as nails to just walk up to a tiger, you immediately mauled by the tiger. In the process, you get your hair ripped out...no need for haircut...YOU LOSE. TRY AGAIN!'
+            puts render_ascii_art './fight.txt'
+            puts 'Even though you thought you were tough as nails to just walk up to a tiger, you immediately mauled by the tiger. In the process, you get your hair ripped out...no need for haircut...YOU LOSE. TRY AGAIN! Hit enter key to continue...'
+            gets
+            puts `clear`
             third_obstacle_options
         elsif user_choice == 'c'
             puts 'You befriended the tiger...thanks Netflix...and you continue your journey!'
@@ -159,8 +178,9 @@ def final_obstacle
 
     def final_obstacle_options
         #****************THIRD Obstacle OPTIONS***************
+        puts render_ascii_art './sign.txt'
         puts '
-        a. pretend you didnt see it and walk in anyways
+        a. Pretend you didnt see it and walk in anyways.
         b. Feeling defeated, you just go home.
         c. Call your newly befriended tiger to intimidate the owner to give you a haircut.
 
@@ -168,16 +188,23 @@ def final_obstacle
 
         # get the users's choice
         user_choice = gets.chomp.downcase
+        puts `clear`
 
         if user_choice == 'a'
-            puts 'You are arrested and you go to jail..."NO HAIRCUT FOR YOU!"...TRY AGAIN'
+            puts render_ascii_art './jail.txt'
+            gets
+            puts `clear`
             final_obstacle_options
         elsif user_choice == 'b'
-            puts 'You arrive at home and tell your roomate about your adventure you just had. They tell you that they picked up a new shelter inplace hobby of cutting hair. "You could have just asked me for a haircut! :)" they said. Exasperated, but relieved, you get your haircut and make it to work in time. YOU WIN!!'
-
+            
+            puts 'You arrive at home and tell your roommate about your adventure you just had. They tell you that they picked up a new shelter-in-place hobby of cutting hair. "You could have just asked me for a haircut! :)" they said. Exasperated, but relieved, you get your haircut and make it to work in time.'
+            puts render_ascii_art './win.txt'
             restart
         elsif user_choice == 'c'
-            puts 'Your barber calls the cops -- and animal control. Your tiger friend is tranquilized and you are tazed. You go to jail and do not get your haircut. YOU LOSE!!...TRY AGAIN!'
+            puts render_ascii_art './jail.txt'
+            puts 'Your barber calls the cops -- and animal control. Your tiger friend is tranquilized and you are tazed. You go to jail and do not get your haircut. YOU LOSE!!...TRY AGAIN! Hit enter key to continue...'
+            gets
+            puts `clear`
             final_obstacle_options
         else
             puts 'Not a valid input try again'
