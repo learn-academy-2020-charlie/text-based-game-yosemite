@@ -1,6 +1,6 @@
 # create the main function that starts the story
 def main
-   
+
     # ***************TITLE & BACK STORY***************
     # displays the title and back story
     storyline =  'WELCOME TO YOUR COVID-19 ADVENTURE
@@ -23,6 +23,12 @@ def main
     first_obstacle
 end
 
+def render_ascii_art
+    File.readlines("./tiger.txt") do |line|
+    puts line
+  end
+end
+
 # Restart game method
 def restart
     puts 'Would you like to quit (q) or restart (r) ?'
@@ -33,32 +39,32 @@ def restart
         puts 'THANKS FOR PLAYING!!'
     elsif user_choice == 'r'
         main
-    else 
+    else
         'Not a valid input. Please enter either "q" or "r".'
         restart
     end
 end
 
-# Define the first options function  
+# Define the first options function
 
 #******************First OBSTACLE*****************
 
 def first_obstacle
-    
+
     puts 'Your favorite barber is only a few blocks away. How do you want to get there?'
     def first_obstacle_options
         #****************FIRST Obstacle OPTIONS***************
         puts '
         a. Drive your car
-        b. Public transportation 
+        b. Public transportation
         c. Walk
 
         Enter your choice, a, b, or c:'
-        
+
         # get the users's choice
         user_choice = gets.chomp.downcase
-        
-        
+
+
         if user_choice == 'a'
             puts 'Your battery is dead since you havent driven in 3 weeks...TRY AGAIN!'
             first_obstacle_options
@@ -80,20 +86,20 @@ end
 
 def second_obstacle
     puts 'Five mins into your walk you stumble across a crowd of people waiting in line outside the store.  How do you get through the crowd?'
-    
+
     def second_obstacle_options
         #****************SECOND Obstacle OPTIONS***************
         puts '
         a. You politely ask the crowd of people to move
-        b. You offer your homemade banana bread 
+        b. You offer your homemade banana bread
         c. You ask them what are they standing in line for
-    
+
         Enter your choice, a, b, or c:'
-        
+
         # get the users's choice
         user_choice = gets.chomp.downcase
-          
-        
+
+
         if user_choice == 'a'
             puts 'You get a haymaker to the face, you go home to disinfect to clean your bloody nose...TRY AGAIN!'
             second_obstacle_options
@@ -114,19 +120,21 @@ end
 
 def third_obstacle
     puts 'Suddenly a tiger appears. You figure that the tiger escaped from the SD zoo because of budget cuts. The tiger is approaching but hasnt spotted you yet, what do you do?'
-    
+
+    puts render_ascii_art
+
     def third_obstacle_options
         #****************THIRD Obstacle OPTIONS***************
         puts '
         a. You run away out of fear
         b. You pick up the nearest stick and try and fight it off
         c. You channel your inner tiger king
-    
+
         Enter your choice, a, b, or c:'
-        
+
         # get the users's choice
         user_choice = gets.chomp.downcase
-          
+
         if user_choice == 'a'
             puts 'You go home and never get your hair cut...TRY AGAIN!'
             third_obstacle_options
@@ -148,25 +156,25 @@ end
 
 def final_obstacle
     puts 'You finally make it to the barbor shop and you see the notice on the door NO MASK NO ENTRY....what do you do?'
-    
+
     def final_obstacle_options
         #****************THIRD Obstacle OPTIONS***************
         puts '
         a. pretend you didnt see it and walk in anyways
         b. Feeling defeated, you just go home.
         c. Call your newly befriended tiger to intimidate the owner to give you a haircut.
-    
+
         Enter your choice, a, b, or c:'
-        
+
         # get the users's choice
         user_choice = gets.chomp.downcase
-            
+
         if user_choice == 'a'
             puts 'You are arrested and you go to jail..."NO HAIRCUT FOR YOU!"...TRY AGAIN'
             final_obstacle_options
         elsif user_choice == 'b'
             puts 'You arrive at home and tell your roomate about your adventure you just had. They tell you that they picked up a new shelter inplace hobby of cutting hair. "You could have just asked me for a haircut! :)" they said. Exasperated, but relieved, you get your haircut and make it to work in time. YOU WIN!!'
-            
+
             restart
         elsif user_choice == 'c'
             puts 'Your barber calls the cops -- and animal control. Your tiger friend is tranquilized and you are tazed. You go to jail and do not get your haircut. YOU LOSE!!...TRY AGAIN!'
