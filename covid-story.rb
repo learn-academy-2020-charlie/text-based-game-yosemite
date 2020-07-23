@@ -23,80 +23,65 @@ def main
     first_obstacle
 end
 
+# Restart game method
+def restart
+    puts 'Would you like to quit (q) or restart (r) ?'
+
+    user_choice = gets.chomp.downcase
+
+    if user_choice == 'q'
+        puts 'THANKS FOR PLAYING!!'
+    elsif user_choice == 'r'
+        main
+    else 
+        'Not a valid input. Please enter either "q" or "r".'
+        restart
+    end
+end
+
 # Define the first options function  
 
-
+#******************First OBSTACLE*****************
 
 def first_obstacle
     
     puts 'Your favorite barber is only a few blocks away. How do you want to get there?'
-    
-    #****************FIRST Obstacle OPTIONS***************
-    puts '
-    a. Drive your car
-    b. Public transportation 
-    c. Walk
+    def first_obstacle_options
+        #****************FIRST Obstacle OPTIONS***************
+        puts '
+        a. Drive your car
+        b. Public transportation 
+        c. Walk
 
-    Enter your choice, a, b, or c:'
-    
-    # get the users's choice
-    user_choice = gets.chomp.downcase
-      
-    
-    if user_choice == 'a'
-        puts 'Your battery is dead since you havent driven in 3 weeks...TRY AGAIN!'
-        first_obstacle_options
-    elsif user_choice == 'b'
-        puts 'Someone sneezes on you and you go home to shower...TRY AGAIN!'
-        first_obstacle_options
-    elsif user_choice == 'c'
-        puts 'You promptly start walking down the sidewalk thinking to yourself..this wont take very long'
-        second_obstacle
-    else
-        puts 'Not a valid input try again'
-        first_obstacle_options
-    end
-end
-
-def first_obstacle_options
+        Enter your choice, a, b, or c:'
         
-    #****************FIRST Obstacle OPTIONS***************
-    puts '
-    a. Drive your car
-    b. Public transportation 
-    c. Walk
-
-    Enter your choice, a, b, or c:'
-    
-    # get the users's choice
-    user_choice = gets.chomp.downcase
-      
-    
-    if user_choice == 'a'
-        puts 'Your battery is dead since you havent driven in 3 weeks...TRY AGAIN!'
-        first_obstacle_options
-    elsif user_choice == 'b'
-        puts 'Someone sneezes on you and you go home to shower...TRY AGAIN!'
-        first_obstacle_options
-    elsif user_choice == 'c'
-        puts 'You promptly start walking down the sidewalk thinking to yourself..this wont take very long'
-        second_obstacle
-    else
-        puts 'Not a valid input try again'
-        first_obstacle_options
+        # get the users's choice
+        user_choice = gets.chomp.downcase
+        
+        
+        if user_choice == 'a'
+            puts 'Your battery is dead since you havent driven in 3 weeks...TRY AGAIN!'
+            first_obstacle_options
+        elsif user_choice == 'b'
+            puts 'Someone sneezes on you and you go home to shower...TRY AGAIN!'
+            first_obstacle_options
+        elsif user_choice == 'c'
+            puts 'You promptly start walking down the sidewalk thinking to yourself..this wont take very long'
+            second_obstacle
+        else
+            puts 'Not a valid input try again'
+            first_obstacle_options
+        end
     end
+    first_obstacle_options
 end
 
 #******************Second OBSTACLE*****************
 
-# 
-
-# a. You politely ask the crowd of people to move - you get a haymaker to the face, you go home to disinfect to clean your bloody nose
-# b. You offer your homeade banana bread that you just so happen to have - the crowd successfully parts and you continue your journey
-# c. You ask them what are they standing in line for, they say TP and you quickly realize you need TP so you stand in line to buy TP - you go home
 def second_obstacle
     puts 'Five mins into your walk you stumble across a crowd of people waiting in line outside the store.  How do you get through the crowd?'
-        
+    
+    def second_obstacle_options
         #****************SECOND Obstacle OPTIONS***************
         puts '
         a. You politely ask the crowd of people to move
@@ -122,59 +107,77 @@ def second_obstacle
             puts 'Not a valid input try again'
             second_obstacle_options
         end
-end
-
-def second_obstacle_options
-    puts '
-    a. You politely ask the crowd of people to move
-    b. You offer your homemade banana bread 
-    c. You ask them what are they standing in line for
-
-    Enter your choice, a, b, or c:'
-    
-    # get the users's choice
-    user_choice = gets.chomp.downcase
-      
-    
-    if user_choice == 'a'
-        puts 'You get a haymaker to the face, you go home to disinfect to clean your bloody nose...TRY AGAIN!'
-        second_obstacle_options
-    elsif user_choice == 'b'
-        puts 'The crowd successfully parts and you continue your journey'
-        third_obstacle
-    elsif user_choice == 'c'
-        puts 'They say TP and you quickly realize you need TP so you stand in line to buy TP - you go home...TRY AGAIN!'
-        second_obstacle_options
-    else
-        puts 'Not a valid input try again'
-        second_obstacle_options
     end
+    second_obstacle_options
 end
-        
-def third_obstacle
-end
-
-
-
 #******************Thrid OBSTACLE*******************
 
-# Suddenly a tiger appears. You figure that the tiger escaped from the SD zoo because of budget cuts. The tiger is approaching but hasnt spotted you yet, what do you do?
-
-# a. you run away out of fear - you never get your hair cut
-# b. you pick up the nearest stick and try and fight it off - you get completely mauled by the tiger and in the process you get your hair ripped out..no need for haircut YOU LOSE try again
-# c. you channel your inner tiger king - you befriended the tiger...thanks netflix.. and you continue your journey
-
+def third_obstacle
+    puts 'Suddenly a tiger appears. You figure that the tiger escaped from the SD zoo because of budget cuts. The tiger is approaching but hasnt spotted you yet, what do you do?'
+    
+    def third_obstacle_options
+        #****************THIRD Obstacle OPTIONS***************
+        puts '
+        a. You run away out of fear
+        b. You pick up the nearest stick and try and fight it off
+        c. You channel your inner tiger king
+    
+        Enter your choice, a, b, or c:'
+        
+        # get the users's choice
+        user_choice = gets.chomp.downcase
+          
+        if user_choice == 'a'
+            puts 'You go home and never get your hair cut...TRY AGAIN!'
+            third_obstacle_options
+        elsif user_choice == 'b'
+            puts 'Even though you thought you were tough as nails to just walk up to a tiger, you immediately mauled by the tiger. In the process, you get your hair ripped out...no need for haircut...YOU LOSE. TRY AGAIN!'
+            third_obstacle_options
+        elsif user_choice == 'c'
+            puts 'You befriended the tiger...thanks Netflix...and you continue your journey!'
+            final_obstacle
+        else
+            puts 'Not a valid input try again'
+            third_obstacle_options
+        end
+    end
+    third_obstacle_options
+end
 
 #*****************FINAL OBSTACLE*******************
 
-# You finally make it to the barbor shop and you see the notice on the door NO MASK NO ENTRY....what do you do?
-
-# a. pretend you didnt see it and walk in anyways - you are arrested and you go to jail.."NO HAIRCUT FOR YOU!"
-# b. defeated yoU go home - you tell your roomate about your adventure you jsut had and they inform you that they picked up a new shelter inplace hobby of cutting hair. they tell you, you could have just asked them for a haircut. exasperated but relieved you get your haircut and make it to work in time YOU WIN!!
-# c. call your newly befriended tiger to intimidate the owner to give you a haircut - your barbor calls the cops and animal control your tiger friend is tranquilized and you are tazed. you go to jail and do not get your haircut YOU LOSE!!
-
-
-
+def final_obstacle
+    puts 'You finally make it to the barbor shop and you see the notice on the door NO MASK NO ENTRY....what do you do?'
+    
+    def final_obstacle_options
+        #****************THIRD Obstacle OPTIONS***************
+        puts '
+        a. pretend you didnt see it and walk in anyways
+        b. Feeling defeated, you just go home.
+        c. Call your newly befriended tiger to intimidate the owner to give you a haircut.
+    
+        Enter your choice, a, b, or c:'
+        
+        # get the users's choice
+        user_choice = gets.chomp.downcase
+            
+        if user_choice == 'a'
+            puts 'You are arrested and you go to jail..."NO HAIRCUT FOR YOU!"...TRY AGAIN'
+            final_obstacle_options
+        elsif user_choice == 'b'
+            puts 'You arrive at home and tell your roomate about your adventure you just had. They tell you that they picked up a new shelter inplace hobby of cutting hair. "You could have just asked me for a haircut! :)" they said. Exasperated, but relieved, you get your haircut and make it to work in time. YOU WIN!!'
+            
+            restart
+        elsif user_choice == 'c'
+            puts 'Your barber calls the cops -- and animal control. Your tiger friend is tranquilized and you are tazed. You go to jail and do not get your haircut. YOU LOSE!!...TRY AGAIN!'
+            final_obstacle_options
+        else
+            puts 'Not a valid input try again'
+            final_obstacle_options
+        end
+    end
+    final_obstacle_options
+end
 
 # call the main function
 main
