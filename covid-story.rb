@@ -10,7 +10,8 @@ def main
     You take a look at the clock and you realize you have 1 hour before work starts
     Because of your personality you need to get a haircut...NOW!!
     You think to yourself, "If I hurry I can get a haircut and make it back in time".....as long as nothing happens
-    In a rush you quickly grab your hat and keys and your homeade banana bread and rush out the door.'
+    In a rush you quickly grab your hat and keys and your homeade banana bread and rush out the door.
+    '
 
     puts storyline
     # storyline.each_char do |value|
@@ -28,7 +29,7 @@ end
 
 def first_obstacle
     
-    puts 'Your favorite barber is only a few blocks away. How do you want to get there? \n'
+    puts 'Your favorite barber is only a few blocks away. How do you want to get there?'
     
     #****************FIRST Obstacle OPTIONS***************
     puts '
@@ -60,7 +61,8 @@ end
 def first_obstacle_options
         
     #****************FIRST Obstacle OPTIONS***************
-    puts 'a. Drive your car
+    puts '
+    a. Drive your car
     b. Public transportation 
     c. Walk
 
@@ -71,7 +73,7 @@ def first_obstacle_options
       
     
     if user_choice == 'a'
-        puts 'our battery is dead since you havent driven in 3 weeks...TRY AGAIN!'
+        puts 'Your battery is dead since you havent driven in 3 weeks...TRY AGAIN!'
         first_obstacle_options
     elsif user_choice == 'b'
         puts 'Someone sneezes on you and you go home to shower...TRY AGAIN!'
@@ -85,19 +87,72 @@ def first_obstacle_options
     end
 end
 
-def second_obstacle
-end
-
-
-        
-
 #******************Second OBSTACLE*****************
 
-# 5 mins into your walk you stumble across a crowd of people waiting in line outside the store.  How do you get through the crowd?
+# 
 
 # a. You politely ask the crowd of people to move - you get a haymaker to the face, you go home to disinfect to clean your bloody nose
 # b. You offer your homeade banana bread that you just so happen to have - the crowd successfully parts and you continue your journey
 # c. You ask them what are they standing in line for, they say TP and you quickly realize you need TP so you stand in line to buy TP - you go home
+def second_obstacle
+    puts 'Five mins into your walk you stumble across a crowd of people waiting in line outside the store.  How do you get through the crowd?'
+        
+        #****************SECOND Obstacle OPTIONS***************
+        puts '
+        a. You politely ask the crowd of people to move
+        b. You offer your homemade banana bread 
+        c. You ask them what are they standing in line for
+    
+        Enter your choice, a, b, or c:'
+        
+        # get the users's choice
+        user_choice = gets.chomp.downcase
+          
+        
+        if user_choice == 'a'
+            puts 'You get a haymaker to the face, you go home to disinfect to clean your bloody nose...TRY AGAIN!'
+            second_obstacle_options
+        elsif user_choice == 'b'
+            puts 'The crowd successfully parts and you continue your journey'
+            third_obstacle
+        elsif user_choice == 'c'
+            puts 'They say TP and you quickly realize you need TP so you stand in line to buy TP - you go home...TRY AGAIN!'
+            second_obstacle_options
+        else
+            puts 'Not a valid input try again'
+            second_obstacle_options
+        end
+end
+
+def second_obstacle_options
+    puts '
+    a. You politely ask the crowd of people to move
+    b. You offer your homemade banana bread 
+    c. You ask them what are they standing in line for
+
+    Enter your choice, a, b, or c:'
+    
+    # get the users's choice
+    user_choice = gets.chomp.downcase
+      
+    
+    if user_choice == 'a'
+        puts 'You get a haymaker to the face, you go home to disinfect to clean your bloody nose...TRY AGAIN!'
+        second_obstacle_options
+    elsif user_choice == 'b'
+        puts 'The crowd successfully parts and you continue your journey'
+        third_obstacle
+    elsif user_choice == 'c'
+        puts 'They say TP and you quickly realize you need TP so you stand in line to buy TP - you go home...TRY AGAIN!'
+        second_obstacle_options
+    else
+        puts 'Not a valid input try again'
+        second_obstacle_options
+    end
+end
+        
+def third_obstacle
+end
 
 
 
